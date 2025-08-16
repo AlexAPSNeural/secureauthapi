@@ -1,45 +1,44 @@
 const express = require('express');
 const cors = require('cors');
-const dotenv = require('dotenv');
+require('dotenv').config();
+
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-dotenv.config();
-
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-const PORT = process.env.PORT || 3000;
+// Environment variables
+const AUTH_SECRET = process.env.AUTH_SECRET;
+if (!AUTH_SECRET) {
+  console.error('FATAL ERROR: AUTH_SECRET not defined.');
+  process.exit(1);
+}
 
-app.get('/', (req, res) => {
-  res.send('Welcome to SecureAuthAPI');
+// Routes
+app.post('/login', (req, res) => {
+  // Authentication logic for logging in user
+  res.send('Login route');
 });
 
-// Authentication route example
-app.post('/auth/login', (req, res) => {
-  // Handle login logic
-  res.status(200).send('Login successful');
+app.post('/register', (req, res) => {
+  // Authentication logic for registering user
+  res.send('Register route');
 });
 
-app.post('/auth/register', (req, res) => {
-  // Handle registration logic
-  res.status(201).send('User registered');
+app.get('/profile', (req, res) => {
+  // Secure route for retrieving user profile
+  res.send('Profile route');
 });
 
-app.use((req, res, next) => {
-  const error = new Error('Not Found');
-  error.status = 404;
-  next(error);
+// Error handling
+app.use((err, req, res, next) => {
+  console.error(err.message);
+  res.status(500).send('Something went wrong');
 });
 
-app.use((error, req, res, next) => {
-  res.status(error.status || 500);
-  res.send({
-    error: {
-      message: error.message,
-    },
-  });
-});
-
+// Start server
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`SecureAuthAPI running on port ${PORT}`);
 });
