@@ -1,0 +1,17 @@
+{
+  "name": "SecureAuthAPI",
+  "version": "1.0.0",
+  "description": "SecureAuthAPI provides developers with a seamless and robust authentication system, reducing the time and cost associated with building secure user authentication from scratch. Our API ensures compliance and security, allowing developers to focus on core product development while significantly lowering risk and improving application security.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3"
+  },
+  "author": "",
+  "license": "MIT"
+}
