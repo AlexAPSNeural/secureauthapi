@@ -3,75 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureAuthAPI - Seamless Authentication Solutions</title>
+    <title>SecureAuthAPI - Effortless Authentication</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        body, html {
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
             color: #333;
-            background-color: #f4f4f9;
         }
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
         header {
-            background-color: #1d3557;
-            color: #f1faee;
-            padding: 20px 0;
+            background-color: #0053a7;
+            color: #fff;
+            padding: 10px 0;
             text-align: center;
         }
         header h1 {
             margin: 0;
             font-size: 2.5em;
         }
-        .intro {
-            background-color: #457b9d;
-            color: #f1faee;
-            padding: 40px 20px;
-            text-align: center;
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #f4f4f4;
+            padding: 10px 0;
         }
-        .intro p {
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #0062cc, #004a99);
+            color: #fff;
+        }
+        .hero h2 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .hero p {
             font-size: 1.2em;
+            max-width: 600px;
         }
         .features {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             padding: 40px 0;
+            text-align: center;
         }
-        .feature {
-            background-color: #e9ecef;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        .features div {
+            flex-basis: 30%;
             margin: 20px;
             padding: 20px;
-            flex: 1 1 30%;
-            max-width: 30%;
-            text-align: center;
+            background-color: #f4f4f4;
+            border-radius: 8px;
         }
-        .feature h3 {
-            color: #1d3557;
+        .features h3 {
+            font-size: 1.5em;
+            color: #0053a7;
+        }
+        .cta {
+            background-color: #0053a7;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+        }
+        .cta p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .cta button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #ff4747;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
         }
         footer {
-            background-color: #1d3557;
-            color: #f1faee;
             text-align: center;
             padding: 20px 0;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
+            background-color: #333;
+            color: #fff;
         }
         @media (max-width: 768px) {
-            .features {
-                flex-direction: column;
-                align-items: center;
-            }
-            .feature {
-                max-width: 80%;
+            .features div {
+                flex-basis: 100%;
             }
         }
     </style>
@@ -82,27 +114,39 @@
             <h1>SecureAuthAPI</h1>
         </div>
     </header>
-    <div class="intro">
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section class="hero" id="home">
         <div class="container">
-            <p>Providing developers with a seamless and robust authentication system, SecureAuthAPI reduces the time and cost associated with building secure user authentication from scratch.</p>
+            <h2>Effortless Authentication, Maximum Security</h2>
+            <p>Integrate SecureAuthAPI to quickly deliver robust authentication solutions. Focus on core development while we handle compliance and security.</p>
         </div>
-    </div>
-    <div class="container">
-        <section class="features">
-            <div class="feature">
+    </section>
+    <section class="features" id="features">
+        <div class="container">
+            <div>
                 <h3>Seamless Integration</h3>
-                <p>Integrate SecureAuthAPI effortlessly into your applications and ensure smooth user experiences.</p>
+                <p>Our API integrates with any application, reducing the development time and effort required to build secure user authentication from scratch.</p>
             </div>
-            <div class="feature">
-                <h3>Comprehensive Compliance</h3>
-                <p>Stay compliant and secure with industry-standard authentication protocols and best practices.</p>
+            <div>
+                <h3>Robust Security</h3>
+                <p>With cutting-edge security features, SecureAuthAPI provides a high level of security for your user authentication processes, mitigating risks and exposures.</p>
             </div>
-            <div class="feature">
-                <h3>Focus on Core Development</h3>
-                <p>Allow your team to focus on core product development, while SecureAuthAPI handles authentication.</p>
+            <div>
+                <h3>Compliance Guaranteed</h3>
+                <p>Ensure your application stays compliant with the latest industry standards and regulations, with continuous updates and support from SecureAuthAPI.</p>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+    <section class="cta" id="contact">
+        <div class="container">
+            <p>Ready to enhance your application's security and save time?</p>
+            <button>Contact Us Today</button>
+        </div>
+    </section>
     <footer>
         <div class="container">
             <p>&copy; 2023 SecureAuthAPI. All rights reserved.</p>
